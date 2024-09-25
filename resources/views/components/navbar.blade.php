@@ -88,10 +88,15 @@
     <div x-show="isOpen" class="md:hidden" id="mobile-menu">
       <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-        <x-nav-link href="/posts" :active="request()->is('posts')">Blog</x-nav-link>
-        <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
-        <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
+        <a href="/" class="{{ request()->is('/') ? ' bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} block rounded-md px-3 py-2 text-base font-medium"
+    aria-current="{{ request()->is('/') ? 'page' : false}}">Home</a>
+        <a href="/posts" class="{{ request()->is('posts') ? ' bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} block rounded-md px-3 py-2 text-base font-medium"
+    aria-current="{{ request()->is('posts') ? 'page' : false}}">Blog</a>
+        <a href="/about" class="{{ request()->is('about') ? ' bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} block rounded-md px-3 py-2 text-base font-medium"
+    aria-current="{{ request()->is('about') ? 'page' : false}}">About</a>
+        <a href="/contact" class="{{ request()->is('contact') ? ' bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'}} block rounded-md px-3 py-2 text-base font-medium"
+    aria-current="{{ request()->is('contact') ? 'page' : false}}">Contact</a>
+
       </div>
       <div class="border-t border-gray-700 pb-3 pt-4">
         <div class="flex items-center px-5">
