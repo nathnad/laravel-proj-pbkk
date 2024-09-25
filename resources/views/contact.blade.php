@@ -2,7 +2,7 @@
     <x-slot:title>{{ $title }}</x-slot:title>
     <ul>
         <li>
-            <a href="instagram.com/navithania">Instagram</a>
+            <a class="font-medium text-blue-500 hover:underline" href="instagram.com/navithania">Instagram</a>
         </li>
     </ul>
 </x-layout>
